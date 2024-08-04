@@ -5,7 +5,8 @@
 #include <cstdint>
 #include <netdb.h>
 #include <netinet/in.h>
-#include <string>
+#include <array>  //it needs to be added
+#include <string> 
 #include <sys/socket.h>
 #include <utility>
 
