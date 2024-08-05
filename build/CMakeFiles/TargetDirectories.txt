@@ -18,6 +18,13 @@
 /home/jhz/sponge/build/apps/CMakeFiles/edit_cache.dir
 /home/jhz/sponge/build/apps/CMakeFiles/rebuild_cache.dir
 /home/jhz/sponge/build/tests/CMakeFiles/spongechecks.dir
+/home/jhz/sponge/build/tests/CMakeFiles/fsm_stream_reassembler_single.dir
+/home/jhz/sponge/build/tests/CMakeFiles/fsm_stream_reassembler_seq.dir
+/home/jhz/sponge/build/tests/CMakeFiles/fsm_stream_reassembler_dup.dir
+/home/jhz/sponge/build/tests/CMakeFiles/fsm_stream_reassembler_holes.dir
+/home/jhz/sponge/build/tests/CMakeFiles/fsm_stream_reassembler_many.dir
+/home/jhz/sponge/build/tests/CMakeFiles/fsm_stream_reassembler_overlapping.dir
+/home/jhz/sponge/build/tests/CMakeFiles/fsm_stream_reassembler_win.dir
 /home/jhz/sponge/build/tests/CMakeFiles/byte_stream_construction.dir
 /home/jhz/sponge/build/tests/CMakeFiles/byte_stream_one_write.dir
 /home/jhz/sponge/build/tests/CMakeFiles/byte_stream_two_writes.dir

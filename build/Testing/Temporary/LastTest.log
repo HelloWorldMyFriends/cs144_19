@@ -1,17 +1,122 @@
-Start testing: Aug 04 23:56 CST
+Start testing: Aug 05 14:39 CST
 ----------------------------------------------------------
-22/163 Testing: t_byte_stream_construction
-22/163 Test: t_byte_stream_construction
-Command: "/home/jhz/sponge/build/tests/byte_stream_construction"
+15/163 Testing: t_strm_reassem_single
+15/163 Test: t_strm_reassem_single
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_single"
 Directory: /home/jhz/sponge/build
-"t_byte_stream_construction" start time: Aug 04 23:56 CST
+"t_strm_reassem_single" start time: Aug 05 14:39 CST
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"t_byte_stream_construction" end time: Aug 04 23:56 CST
+"t_strm_reassem_single" end time: Aug 05 14:39 CST
+"t_strm_reassem_single" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/163 Testing: t_strm_reassem_seq
+16/163 Test: t_strm_reassem_seq
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_seq"
+Directory: /home/jhz/sponge/build
+"t_strm_reassem_seq" start time: Aug 05 14:39 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"t_strm_reassem_seq" end time: Aug 05 14:39 CST
+"t_strm_reassem_seq" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/163 Testing: t_strm_reassem_dup
+17/163 Test: t_strm_reassem_dup
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_dup"
+Directory: /home/jhz/sponge/build
+"t_strm_reassem_dup" start time: Aug 05 14:39 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"t_strm_reassem_dup" end time: Aug 05 14:39 CST
+"t_strm_reassem_dup" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/163 Testing: t_strm_reassem_holes
+18/163 Test: t_strm_reassem_holes
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_holes"
+Directory: /home/jhz/sponge/build
+"t_strm_reassem_holes" start time: Aug 05 14:39 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"t_strm_reassem_holes" end time: Aug 05 14:39 CST
+"t_strm_reassem_holes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/163 Testing: t_strm_reassem_many
+19/163 Test: t_strm_reassem_many
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_many"
+Directory: /home/jhz/sponge/build
+"t_strm_reassem_many" start time: Aug 05 14:39 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.63 sec
+----------------------------------------------------------
+Test Passed.
+"t_strm_reassem_many" end time: Aug 05 14:39 CST
+"t_strm_reassem_many" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/163 Testing: t_strm_reassem_overlapping
+20/163 Test: t_strm_reassem_overlapping
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_overlapping"
+Directory: /home/jhz/sponge/build
+"t_strm_reassem_overlapping" start time: Aug 05 14:39 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"t_strm_reassem_overlapping" end time: Aug 05 14:39 CST
+"t_strm_reassem_overlapping" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/163 Testing: t_strm_reassem_win
+21/163 Test: t_strm_reassem_win
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_win"
+Directory: /home/jhz/sponge/build
+"t_strm_reassem_win" start time: Aug 05 14:39 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.71 sec
+----------------------------------------------------------
+Test Passed.
+"t_strm_reassem_win" end time: Aug 05 14:39 CST
+"t_strm_reassem_win" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/163 Testing: t_byte_stream_construction
+22/163 Test: t_byte_stream_construction
+Command: "/home/jhz/sponge/build/tests/byte_stream_construction"
+Directory: /home/jhz/sponge/build
+"t_byte_stream_construction" start time: Aug 05 14:39 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"t_byte_stream_construction" end time: Aug 05 14:39 CST
 "t_byte_stream_construction" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -19,14 +124,14 @@ Test Passed.
 23/163 Test: t_byte_stream_one_write
 Command: "/home/jhz/sponge/build/tests/byte_stream_one_write"
 Directory: /home/jhz/sponge/build
-"t_byte_stream_one_write" start time: Aug 04 23:56 CST
+"t_byte_stream_one_write" start time: Aug 05 14:39 CST
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"t_byte_stream_one_write" end time: Aug 04 23:56 CST
+"t_byte_stream_one_write" end time: Aug 05 14:39 CST
 "t_byte_stream_one_write" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -34,14 +139,14 @@ Test Passed.
 24/163 Test: t_byte_stream_two_writes
 Command: "/home/jhz/sponge/build/tests/byte_stream_two_writes"
 Directory: /home/jhz/sponge/build
-"t_byte_stream_two_writes" start time: Aug 04 23:56 CST
+"t_byte_stream_two_writes" start time: Aug 05 14:39 CST
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"t_byte_stream_two_writes" end time: Aug 04 23:56 CST
+"t_byte_stream_two_writes" end time: Aug 05 14:39 CST
 "t_byte_stream_two_writes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -49,14 +154,14 @@ Test Passed.
 25/163 Test: t_byte_stream_capacity
 Command: "/home/jhz/sponge/build/tests/byte_stream_capacity"
 Directory: /home/jhz/sponge/build
-"t_byte_stream_capacity" start time: Aug 04 23:56 CST
+"t_byte_stream_capacity" start time: Aug 05 14:39 CST
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"t_byte_stream_capacity" end time: Aug 04 23:56 CST
+"t_byte_stream_capacity" end time: Aug 05 14:39 CST
 "t_byte_stream_capacity" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -64,14 +169,14 @@ Test Passed.
 26/163 Test: t_byte_stream_many_writes
 Command: "/home/jhz/sponge/build/tests/byte_stream_many_writes"
 Directory: /home/jhz/sponge/build
-"t_byte_stream_many_writes" start time: Aug 04 23:56 CST
+"t_byte_stream_many_writes" start time: Aug 05 14:39 CST
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"t_byte_stream_many_writes" end time: Aug 04 23:56 CST
+"t_byte_stream_many_writes" end time: Aug 05 14:39 CST
 "t_byte_stream_many_writes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -79,11 +184,11 @@ Test Passed.
 27/163 Test: t_webget
 Command: "/home/jhz/sponge/tests/webget_t.sh"
 Directory: /home/jhz/sponge/build
-"t_webget" start time: Aug 04 23:56 CST
+"t_webget" start time: Aug 05 14:39 CST
 Output:
 ----------------------------------------------------------
 HTTP/1.1 200 OK
-Date: Sun, 04 Aug 2024 15:01:21 GMT
+Date: Mon, 05 Aug 2024 05:44:53 GMT
 Server: Apache
 Content-Length: 44
 Connection: close
@@ -91,10 +196,10 @@ Content-Type: text/plain
 
 QWx0NhMPkoM/bJr/ohvHXlviFhOyYrYb+qqdOnwLYo4
 <end of output>
-Test time =   0.79 sec
+Test time =   0.76 sec
 ----------------------------------------------------------
 Test Passed.
-"t_webget" end time: Aug 04 23:56 CST
+"t_webget" end time: Aug 05 14:39 CST
 "t_webget" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -102,14 +207,14 @@ Test Passed.
 47/163 Test: t_address_dt
 Command: "/home/jhz/sponge/build/doctests/address_dt"
 Directory: /home/jhz/sponge/build
-"t_address_dt" start time: Aug 04 23:56 CST
+"t_address_dt" start time: Aug 05 14:39 CST
 Output:
 ----------------------------------------------------------
 <end of output>
-Test time =   0.11 sec
+Test time =   0.03 sec
 ----------------------------------------------------------
 Test Passed.
-"t_address_dt" end time: Aug 04 23:56 CST
+"t_address_dt" end time: Aug 05 14:39 CST
 "t_address_dt" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -117,14 +222,14 @@ Test Passed.
 48/163 Test: t_parser_dt
 Command: "/home/jhz/sponge/build/doctests/parser_dt"
 Directory: /home/jhz/sponge/build
-"t_parser_dt" start time: Aug 04 23:56 CST
+"t_parser_dt" start time: Aug 05 14:39 CST
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"t_parser_dt" end time: Aug 04 23:56 CST
+"t_parser_dt" end time: Aug 05 14:39 CST
 "t_parser_dt" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -132,15 +237,15 @@ Test Passed.
 49/163 Test: t_socket_dt
 Command: "/home/jhz/sponge/build/doctests/socket_dt"
 Directory: /home/jhz/sponge/build
-"t_socket_dt" start time: Aug 04 23:56 CST
+"t_socket_dt" start time: Aug 05 14:39 CST
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"t_socket_dt" end time: Aug 04 23:56 CST
+"t_socket_dt" end time: Aug 05 14:39 CST
 "t_socket_dt" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Aug 04 23:56 CST
+End testing: Aug 05 14:39 CST
