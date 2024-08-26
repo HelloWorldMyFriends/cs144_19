@@ -89,6 +89,8 @@ class ByteStream {
     //! Total number of bytes popped
     size_t bytes_read() const;
     //!@}
+
+    void CatStream();
 };
 
 #endif  // SPONGE_LIBSPONGE_BYTE_STREAM_HH

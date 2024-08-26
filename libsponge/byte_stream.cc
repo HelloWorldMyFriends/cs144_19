@@ -1,5 +1,6 @@
 #include "byte_stream.hh"
 
+#include <iostream>
 #include <algorithm>
 #include <iterator>
 #include <stdexcept>
@@ -26,7 +27,7 @@ size_t ByteStream::write(const string &data) {
 }
 
 //! \param[in] len bytes will be copied from the output side of the buffer
-string ByteStream::peek_output(const size_t len) const {//TODO
+string ByteStream::peek_output(const size_t len) const {// TODO
     size_t peek_size = min(len, _buffer.size());
     return string(_buffer.begin(), _buffer.begin() + peek_size);
 }
@@ -75,4 +76,13 @@ size_t ByteStream::bytes_read() const {
 
 size_t ByteStream::remaining_capacity() const {
     return _capacity - _buffer.size(); 
+}
+
+void ByteStream::CatStream(){
+    cout << "current ByteStream is:";
+    for(const char &elem : _buffer){
+        cout << elem;
+      }
+      cout << endl;
+      return;
 }
