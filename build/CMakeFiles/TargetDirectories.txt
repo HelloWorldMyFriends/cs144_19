@@ -40,6 +40,12 @@
 /home/jhz/sponge/build/tests/CMakeFiles/recv_window.dir
 /home/jhz/sponge/build/tests/CMakeFiles/recv_reorder.dir
 /home/jhz/sponge/build/tests/CMakeFiles/recv_close.dir
+/home/jhz/sponge/build/tests/CMakeFiles/send_connect.dir
+/home/jhz/sponge/build/tests/CMakeFiles/send_transmit.dir
+/home/jhz/sponge/build/tests/CMakeFiles/send_retx.dir
+/home/jhz/sponge/build/tests/CMakeFiles/send_ack.dir
+/home/jhz/sponge/build/tests/CMakeFiles/send_window.dir
+/home/jhz/sponge/build/tests/CMakeFiles/send_close.dir
 /home/jhz/sponge/build/tests/CMakeFiles/test.dir
 /home/jhz/sponge/build/tests/CMakeFiles/edit_cache.dir
 /home/jhz/sponge/build/tests/CMakeFiles/rebuild_cache.dir
