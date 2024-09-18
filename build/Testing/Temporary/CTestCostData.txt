@@ -1,32 +1,208 @@
-t_webget 135 0.00521459
-t_byte_stream_construction 131 2.71327e-05
-t_byte_stream_one_write 131 2.76625e-05
-t_byte_stream_two_writes 131 2.56944e-05
-t_byte_stream_capacity 131 2.50983e-05
-t_byte_stream_many_writes 131 0.00019946
-t_address_dt 132 5.87626e-05
-t_parser_dt 133 2.88025e-05
-t_socket_dt 133 6.42466e-05
-t_strm_reassem_single 128 3.62847e-05
-t_strm_reassem_seq 129 4.35053e-05
-t_strm_reassem_dup 129 0.000237883
-t_strm_reassem_holes 128 3.16149e-05
-t_strm_reassem_many 129 0.0133181
-t_strm_reassem_overlapping 129 3.15175e-05
-t_strm_reassem_win 129 0.0139262
-t_wrapping_ints_cmp 135 0.00017893
-t_wrapping_ints_unwrap 129 3.01183e-05
-t_wrapping_ints_wrap 134 3.05103e-05
-t_recv_connect 86 5.33174e-05
-t_recv_transmit 79 0.00548857
-t_recv_window 51 8.15223e-05
-t_recv_reorder 78 0.000306014
-t_recv_close 102 0.000238192
-t_send_connect 20 0.00120954
-t_send_transmit 22 0.00240248
-t_send_retx 1 0.0244512
-t_send_window 22 0.00250046
-t_send_ack 36 0.00071231
-t_send_close 13 0.00189434
-t_strm_reassem_cap 50 9.14583e-05
+t_webget 146 0.00300693
+t_byte_stream_construction 142 2.52665e-05
+t_byte_stream_one_write 142 2.28592e-05
+t_byte_stream_two_writes 142 2.57249e-05
+t_byte_stream_capacity 142 2.45927e-05
+t_byte_stream_many_writes 142 0.000188176
+t_address_dt 143 0.00011831
+t_parser_dt 144 2.84102e-05
+t_socket_dt 144 6.85568e-05
+t_strm_reassem_single 139 2.79551e-05
+t_strm_reassem_seq 140 3.00556e-05
+t_strm_reassem_dup 140 0.000192596
+t_strm_reassem_holes 139 2.77209e-05
+t_strm_reassem_many 140 0.0117884
+t_strm_reassem_overlapping 140 2.61785e-05
+t_strm_reassem_win 140 0.0121766
+t_wrapping_ints_cmp 146 0.000149646
+t_wrapping_ints_unwrap 140 2.50327e-05
+t_wrapping_ints_wrap 145 2.24637e-05
+t_recv_connect 97 3.81725e-05
+t_recv_transmit 90 0.000694457
+t_recv_window 62 6.08768e-05
+t_recv_reorder 89 0.000249274
+t_recv_close 113 0.000205855
+t_send_connect 31 0.000759138
+t_send_transmit 33 0.00180124
+t_send_retx 12 0.0019579
+t_send_window 33 0.00171242
+t_send_ack 47 0.000471808
+t_send_close 24 0.000985891
+t_strm_reassem_cap 61 6.17647e-05
+t_tcp_parser 11 0.00240193
+t_ipv4_parser 11 0.00242807
+t_active_close 2 0.00216936
+t_passive_close 2 0.00195974
+t_ack_rst 2 0.00224438
+t_ack_rst_win 2 0.00208099
+t_connect 2 0.0113637
+t_listen 1 0.0042358
+t_winsize 1 0.0486857
+t_retx 1 0.0237502
+t_retx_win 2 0.0128658
+t_loopback 1 1.27584
+t_loopback_win 1 0.815381
+t_reorder 2 0.870458
+t_udp_client_send 1 0.283337
+t_udp_server_send 1 0.279567
+t_udp_client_recv 1 0.28249
+t_udp_server_recv 1 0.282062
+t_udp_client_dupl 1 0.283203
+t_udp_server_dupl 1 0.285406
+t_ucS_1M_32k 1 0.629993
+t_ucS_128K_8K 1 0.321187
+t_ucS_16_1 1 0.283803
+t_ucS_32K_d 1 0.292085
+t_ucR_1M_32k 1 0.613311
+t_ucR_128K_8K 1 0.324113
+t_ucR_16_1 1 0.283163
+t_ucR_32K_d 1 0.292483
+t_ucD_1M_32k 1 0.695383
+t_ucD_128K_8K 1 0.332802
+t_ucD_16_1 1 0.283957
+t_ucD_32K_d 1 0.284497
+t_usS_1M_32k 1 0.524345
+t_usS_128K_8K 1 0.302272
+t_usS_16_1 1 0.274767
+t_usS_32K_d 1 0.28731
+t_usR_1M_32k 1 0.546733
+t_usR_128K_8K 1 0.306169
+t_usR_16_1 1 0.276454
+t_usR_32K_d 1 0.282197
+t_usD_1M_32k 1 0.567285
+t_usD_128K_8K 1 0.312373
+t_usD_16_1 1 0.280775
+t_usD_32K_d 1 0.282631
+t_ucS_128K_8K_l 1 0.305273
+t_ucS_128K_8K_L 1 0.387289
+t_ucS_128K_8K_lL 1 0.535851
+t_ucR_128K_8K_l 1 0.484542
+t_ucR_128K_8K_L 1 0.317761
+t_ucR_128K_8K_lL 1 0.535971
+t_ucD_128K_8K_l 1 0.498392
+t_ucD_128K_8K_L 1 0.411982
+t_ucD_128K_8K_lL 1 0.587376
+t_usS_128K_8K_l 1 0.32513
+t_usS_128K_8K_L 1 0.480519
+t_usS_128K_8K_lL 1 0.551918
+t_usR_128K_8K_l 1 0.540221
+t_usR_128K_8K_L 1 0.327648
+t_usR_128K_8K_lL 1 0.522177
+t_usD_128K_8K_l 1 0.418866
+t_usD_128K_8K_L 1 0.540024
+t_usD_128K_8K_lL 1 0.691124
+t_ipv4_client_send 0 0
+t_ipv4_server_send 0 0
+t_ipv4_client_recv 0 0
+t_ipv4_server_recv 0 0
+t_ipv4_client_dupl 0 0
+t_ipv4_server_dupl 0 0
+t_icS_1M_32k 0 0
+t_icS_128K_8K 0 0
+t_icS_16_1 0 0
+t_icS_32K_d 0 0
+t_icR_1M_32k 0 0
+t_icR_128K_8K 0 0
+t_icR_16_1 0 0
+t_icR_32K_d 0 0
+t_icD_1M_32k 0 0
+t_icD_128K_8K 0 0
+t_icD_16_1 0 0
+t_icD_32K_d 0 0
+t_isS_1M_32k 0 0
+t_isS_128K_8K 0 0
+t_isS_16_1 0 0
+t_isS_32K_d 0 0
+t_isR_1M_32k 0 0
+t_isR_128K_8K 0 0
+t_isR_16_1 0 0
+t_isR_32K_d 0 0
+t_isD_1M_32k 0 0
+t_isD_128K_8K 0 0
+t_isD_16_1 0 0
+t_isD_32K_d 0 0
+t_icS_128K_8K_l 0 0
+t_icS_128K_8K_L 0 0
+t_icS_128K_8K_lL 0 0
+t_icR_128K_8K_l 0 0
+t_icR_128K_8K_L 0 0
+t_icR_128K_8K_lL 0 0
+t_icD_128K_8K_l 0 0
+t_icD_128K_8K_L 0 0
+t_icD_128K_8K_lL 0 0
+t_isS_128K_8K_l 0 0
+t_isS_128K_8K_L 0 0
+t_isS_128K_8K_lL 0 0
+t_isR_128K_8K_l 0 0
+t_isR_128K_8K_L 0 0
+t_isR_128K_8K_lL 0 0
+t_isD_128K_8K_l 0 0
+t_isD_128K_8K_L 0 0
+t_isD_128K_8K_lL 0 0
+t_icnS_128K_8K_l 2 0.0808249
+t_icnS_128K_8K_L 2 0.132301
+t_icnS_128K_8K_lL 2 0.15088
+t_icnR_128K_8K_l 1 0.601556
+t_icnR_128K_8K_L 1 0.310449
+t_icnR_128K_8K_lL 1 0.965014
+t_icnD_128K_8K_l 1 0.59769
+t_icnD_128K_8K_L 1 0.248414
+t_icnD_128K_8K_lL 1 1.00301
+t_isnS_128K_8K_l 2 0.0735414
+t_isnS_128K_8K_L 2 0.124164
+t_isnS_128K_8K_lL 2 0.597334
+t_isnR_128K_8K_l 1 0.452385
+t_isnR_128K_8K_L 1 0.292188
+t_isnR_128K_8K_lL 1 0.410375
+t_isnD_128K_8K_l 1 0.465377
+t_isnD_128K_8K_L 1 0.207297
+t_isnD_128K_8K_lL 1 1.59118
 ---
+t_ipv4_client_send
+t_ipv4_server_send
+t_ipv4_client_recv
+t_ipv4_server_recv
+t_ipv4_client_dupl
+t_ipv4_server_dupl
+t_icS_1M_32k
+t_icS_128K_8K
+t_icS_16_1
+t_icS_32K_d
+t_icR_1M_32k
+t_icR_128K_8K
+t_icR_16_1
+t_icR_32K_d
+t_icD_1M_32k
+t_icD_128K_8K
+t_icD_16_1
+t_icD_32K_d
+t_isS_1M_32k
+t_isS_128K_8K
+t_isS_16_1
+t_isS_32K_d
+t_isR_1M_32k
+t_isR_128K_8K
+t_isR_16_1
+t_isR_32K_d
+t_isD_1M_32k
+t_isD_128K_8K
+t_isD_16_1
+t_isD_32K_d
+t_icS_128K_8K_l
+t_icS_128K_8K_L
+t_icS_128K_8K_lL
+t_icR_128K_8K_l
+t_icR_128K_8K_L
+t_icR_128K_8K_lL
+t_icD_128K_8K_l
+t_icD_128K_8K_L
+t_icD_128K_8K_lL
+t_isS_128K_8K_l
+t_isS_128K_8K_L
+t_isS_128K_8K_lL
+t_isR_128K_8K_l
+t_isR_128K_8K_L
+t_isR_128K_8K_lL
+t_isD_128K_8K_l
+t_isD_128K_8K_L
+t_isD_128K_8K_lL

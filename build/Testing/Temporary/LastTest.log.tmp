@@ -1,0 +1,1370 @@
+Start testing: Sep 18 13:22 CST
+----------------------------------------------------------
+1/164 Testing: t_wrapping_ints_cmp
+1/164 Test: t_wrapping_ints_cmp
+Command: "/home/jhz/sponge/build/tests/wrapping_integers_cmp"
+Directory: /home/jhz/sponge/build
+"t_wrapping_ints_cmp" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"t_wrapping_ints_cmp" end time: Sep 18 13:22 CST
+"t_wrapping_ints_cmp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/164 Testing: t_wrapping_ints_unwrap
+2/164 Test: t_wrapping_ints_unwrap
+Command: "/home/jhz/sponge/build/tests/wrapping_integers_unwrap"
+Directory: /home/jhz/sponge/build
+"t_wrapping_ints_unwrap" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"t_wrapping_ints_unwrap" end time: Sep 18 13:22 CST
+"t_wrapping_ints_unwrap" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/164 Testing: t_wrapping_ints_wrap
+3/164 Test: t_wrapping_ints_wrap
+Command: "/home/jhz/sponge/build/tests/wrapping_integers_wrap"
+Directory: /home/jhz/sponge/build
+"t_wrapping_ints_wrap" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"t_wrapping_ints_wrap" end time: Sep 18 13:22 CST
+"t_wrapping_ints_wrap" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/164 Testing: t_recv_connect
+4/164 Test: t_recv_connect
+Command: "/home/jhz/sponge/build/tests/recv_connect"
+Directory: /home/jhz/sponge/build
+"t_recv_connect" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"t_recv_connect" end time: Sep 18 13:22 CST
+"t_recv_connect" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/164 Testing: t_recv_transmit
+5/164 Test: t_recv_transmit
+Command: "/home/jhz/sponge/build/tests/recv_transmit"
+Directory: /home/jhz/sponge/build
+"t_recv_transmit" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test Failure on expectation:
+	Expectation: ackno 5
+
+Failure message:
+	The TCPReceiver reported ackno `1`, but it was expected to be `5`
+
+List of steps that executed successfully:
+	Initialized with (capacity=4000)
+	Action:      segment arrives Header(flags=S,seqno=0,ack=0,win=0)
+	Action:      segment arrives Header(flags=,seqno=1,ack=0,win=0) with data "abcd"
+
+The TCPReceiver reported ackno `1`, but it was expected to be `5`
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"t_recv_transmit" end time: Sep 18 13:22 CST
+"t_recv_transmit" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/164 Testing: t_recv_window
+6/164 Test: t_recv_window
+Command: "/home/jhz/sponge/build/tests/recv_window"
+Directory: /home/jhz/sponge/build
+"t_recv_window" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test Failure on expectation:
+	Expectation: ackno 23457
+
+Failure message:
+	The TCPReceiver reported ackno `23453`, but it was expected to be `23457`
+
+List of steps that executed successfully:
+	Initialized with (capacity=4000)
+	Action:      segment arrives Header(flags=S,seqno=23452,ack=0,win=0)
+	Expectation: ackno 23453
+	Expectation: window 4000
+	Action:      segment arrives Header(flags=,seqno=23453,ack=0,win=0) with data "abcd"
+
+The TCPReceiver reported ackno `23453`, but it was expected to be `23457`
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"t_recv_window" end time: Sep 18 13:22 CST
+"t_recv_window" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/164 Testing: t_recv_reorder
+7/164 Test: t_recv_reorder
+Command: "/home/jhz/sponge/build/tests/recv_reorder"
+Directory: /home/jhz/sponge/build
+"t_recv_reorder" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test Failure on expectation:
+	Expectation: ackno 1643626178
+
+Failure message:
+	The TCPReceiver reported ackno `1643626170`, but it was expected to be `1643626178`
+
+List of steps that executed successfully:
+	Initialized with (capacity=2358)
+	Action:      segment arrives Header(flags=S,seqno=1643626169,ack=0,win=0)
+	Expectation: ackno 1643626170
+	Action:      segment arrives Header(flags=,seqno=1643626174,ack=0,win=0) with data "efgh"
+	Expectation: ackno 1643626170
+	Expectation: bytes available: ""
+	Expectation: 4 unassembled bytes
+	Expectation: 0 assembled bytes, in total
+	Action:      segment arrives Header(flags=,seqno=1643626170,ack=0,win=0) with data "abcd"
+
+The TCPReceiver reported ackno `1643626170`, but it was expected to be `1643626178`
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"t_recv_reorder" end time: Sep 18 13:22 CST
+"t_recv_reorder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/164 Testing: t_recv_close
+8/164 Test: t_recv_close
+Command: "/home/jhz/sponge/build/tests/recv_close"
+Directory: /home/jhz/sponge/build
+"t_recv_close" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test Failure on expectation:
+	Expectation: in state `stream finished`
+
+Failure message:
+	The TCPReceiver was in state `stream started`, but it was expected to be in state `stream finished`
+
+List of steps that executed successfully:
+	Initialized with (capacity=4000)
+	Expectation: in state `waiting for stream to begin (listening for SYN)`
+	Action:      segment arrives Header(flags=S,seqno=618234883,ack=0,win=0)
+	Expectation: in state `stream started`
+	Action:      segment arrives Header(flags=F,seqno=618234884,ack=0,win=0) with data "a"
+
+The TCPReceiver was in state `stream started`, but it was expected to be in state `stream finished`
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"t_recv_close" end time: Sep 18 13:22 CST
+"t_recv_close" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/164 Testing: t_send_connect
+9/164 Test: t_send_connect
+Command: "/home/jhz/sponge/build/tests/send_connect"
+Directory: /home/jhz/sponge/build
+"t_send_connect" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"t_send_connect" end time: Sep 18 13:22 CST
+"t_send_connect" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/164 Testing: t_send_transmit
+10/164 Test: t_send_transmit
+Command: "/home/jhz/sponge/build/tests/send_transmit"
+Directory: /home/jhz/sponge/build
+"t_send_transmit" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"t_send_transmit" end time: Sep 18 13:22 CST
+"t_send_transmit" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/164 Testing: t_send_retx
+11/164 Test: t_send_retx
+Command: "/home/jhz/sponge/build/tests/send_retx"
+Directory: /home/jhz/sponge/build
+"t_send_retx" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"t_send_retx" end time: Sep 18 13:22 CST
+"t_send_retx" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/164 Testing: t_send_window
+12/164 Test: t_send_window
+Command: "/home/jhz/sponge/build/tests/send_window"
+Directory: /home/jhz/sponge/build
+"t_send_window" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"t_send_window" end time: Sep 18 13:22 CST
+"t_send_window" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/164 Testing: t_send_ack
+13/164 Test: t_send_ack
+Command: "/home/jhz/sponge/build/tests/send_ack"
+Directory: /home/jhz/sponge/build
+"t_send_ack" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"t_send_ack" end time: Sep 18 13:22 CST
+"t_send_ack" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/164 Testing: t_send_close
+14/164 Test: t_send_close
+Command: "/home/jhz/sponge/build/tests/send_close"
+Directory: /home/jhz/sponge/build
+"t_send_close" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"t_send_close" end time: Sep 18 13:22 CST
+"t_send_close" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/164 Testing: t_strm_reassem_cap
+15/164 Test: t_strm_reassem_cap
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_cap"
+Directory: /home/jhz/sponge/build
+"t_strm_reassem_cap" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test Failure on expectation:
+	Expectation: net bytes assembled = 2
+
+Failure message:
+	The reassembler was expected to have `2` total bytes assembled, but there were `0`
+
+List of steps that executed successfully:
+	Initialized (capacity = 2)
+	Action:      substring submitted with data "ab", index `0`, eof `0`
+
+Exception: The reassembler was expected to have `2` total bytes assembled, but there were `0`
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"t_strm_reassem_cap" end time: Sep 18 13:22 CST
+"t_strm_reassem_cap" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/164 Testing: t_strm_reassem_single
+16/164 Test: t_strm_reassem_single
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_single"
+Directory: /home/jhz/sponge/build
+"t_strm_reassem_single" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test Failure on expectation:
+	Expectation: net bytes assembled = 1
+
+Failure message:
+	The reassembler was expected to have `1` total bytes assembled, but there were `0`
+
+List of steps that executed successfully:
+	Initialized (capacity = 65000)
+	Action:      substring submitted with data "a", index `0`, eof `0`
+
+Exception: The reassembler was expected to have `1` total bytes assembled, but there were `0`
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"t_strm_reassem_single" end time: Sep 18 13:22 CST
+"t_strm_reassem_single" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/164 Testing: t_strm_reassem_seq
+17/164 Test: t_strm_reassem_seq
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_seq"
+Directory: /home/jhz/sponge/build
+"t_strm_reassem_seq" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test Failure on expectation:
+	Expectation: net bytes assembled = 4
+
+Failure message:
+	The reassembler was expected to have `4` total bytes assembled, but there were `0`
+
+List of steps that executed successfully:
+	Initialized (capacity = 65000)
+	Action:      substring submitted with data "abcd", index `0`, eof `0`
+
+Exception: The reassembler was expected to have `4` total bytes assembled, but there were `0`
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"t_strm_reassem_seq" end time: Sep 18 13:22 CST
+"t_strm_reassem_seq" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/164 Testing: t_strm_reassem_dup
+18/164 Test: t_strm_reassem_dup
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_dup"
+Directory: /home/jhz/sponge/build
+"t_strm_reassem_dup" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test Failure on expectation:
+	Expectation: net bytes assembled = 4
+
+Failure message:
+	The reassembler was expected to have `4` total bytes assembled, but there were `0`
+
+List of steps that executed successfully:
+	Initialized (capacity = 65000)
+	Action:      substring submitted with data "abcd", index `0`, eof `0`
+
+Exception: The reassembler was expected to have `4` total bytes assembled, but there were `0`
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"t_strm_reassem_dup" end time: Sep 18 13:22 CST
+"t_strm_reassem_dup" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/164 Testing: t_strm_reassem_holes
+19/164 Test: t_strm_reassem_holes
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_holes"
+Directory: /home/jhz/sponge/build
+"t_strm_reassem_holes" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test Failure on expectation:
+	Expectation: net bytes assembled = 2
+
+Failure message:
+	The reassembler was expected to have `2` total bytes assembled, but there were `0`
+
+List of steps that executed successfully:
+	Initialized (capacity = 65000)
+	Action:      substring submitted with data "b", index `1`, eof `0`
+	Action:      substring submitted with data "a", index `0`, eof `0`
+
+Exception: The reassembler was expected to have `2` total bytes assembled, but there were `0`
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"t_strm_reassem_holes" end time: Sep 18 13:22 CST
+"t_strm_reassem_holes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/164 Testing: t_strm_reassem_many
+20/164 Test: t_strm_reassem_many
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_many"
+Directory: /home/jhz/sponge/build
+"t_strm_reassem_many" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Exception: test 1 - number of bytes RX is incorrect
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"t_strm_reassem_many" end time: Sep 18 13:22 CST
+"t_strm_reassem_many" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/164 Testing: t_strm_reassem_overlapping
+21/164 Test: t_strm_reassem_overlapping
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_overlapping"
+Directory: /home/jhz/sponge/build
+"t_strm_reassem_overlapping" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test Failure on expectation:
+	Expectation: net bytes assembled = 2
+
+Failure message:
+	The reassembler was expected to have `2` total bytes assembled, but there were `0`
+
+List of steps that executed successfully:
+	Initialized (capacity = 1000)
+	Action:      substring submitted with data "a", index `0`, eof `0`
+	Action:      substring submitted with data "ab", index `0`, eof `0`
+
+Exception: The reassembler was expected to have `2` total bytes assembled, but there were `0`
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"t_strm_reassem_overlapping" end time: Sep 18 13:22 CST
+"t_strm_reassem_overlapping" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/164 Testing: t_strm_reassem_win
+22/164 Test: t_strm_reassem_win
+Command: "/home/jhz/sponge/build/tests/fsm_stream_reassembler_win"
+Directory: /home/jhz/sponge/build
+"t_strm_reassem_win" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Exception: test 2 - number of RX bytes is incorrect
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"t_strm_reassem_win" end time: Sep 18 13:22 CST
+"t_strm_reassem_win" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/164 Testing: t_byte_stream_construction
+23/164 Test: t_byte_stream_construction
+Command: "/home/jhz/sponge/build/tests/byte_stream_construction"
+Directory: /home/jhz/sponge/build
+"t_byte_stream_construction" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"t_byte_stream_construction" end time: Sep 18 13:22 CST
+"t_byte_stream_construction" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/164 Testing: t_byte_stream_one_write
+24/164 Test: t_byte_stream_one_write
+Command: "/home/jhz/sponge/build/tests/byte_stream_one_write"
+Directory: /home/jhz/sponge/build
+"t_byte_stream_one_write" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"t_byte_stream_one_write" end time: Sep 18 13:22 CST
+"t_byte_stream_one_write" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/164 Testing: t_byte_stream_two_writes
+25/164 Test: t_byte_stream_two_writes
+Command: "/home/jhz/sponge/build/tests/byte_stream_two_writes"
+Directory: /home/jhz/sponge/build
+"t_byte_stream_two_writes" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"t_byte_stream_two_writes" end time: Sep 18 13:22 CST
+"t_byte_stream_two_writes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/164 Testing: t_byte_stream_capacity
+26/164 Test: t_byte_stream_capacity
+Command: "/home/jhz/sponge/build/tests/byte_stream_capacity"
+Directory: /home/jhz/sponge/build
+"t_byte_stream_capacity" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"t_byte_stream_capacity" end time: Sep 18 13:22 CST
+"t_byte_stream_capacity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/164 Testing: t_byte_stream_many_writes
+27/164 Test: t_byte_stream_many_writes
+Command: "/home/jhz/sponge/build/tests/byte_stream_many_writes"
+Directory: /home/jhz/sponge/build
+"t_byte_stream_many_writes" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"t_byte_stream_many_writes" end time: Sep 18 13:22 CST
+"t_byte_stream_many_writes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/164 Testing: t_webget
+28/164 Test: t_webget
+Command: "/home/jhz/sponge/tests/webget_t.sh"
+Directory: /home/jhz/sponge/build
+"t_webget" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+HTTP/1.1 200 OK
+Date: Wed, 18 Sep 2024 04:21:33 GMT
+Server: Apache
+Content-Length: 44
+Connection: close
+Content-Type: text/plain
+
+QWx0NhMPkoM/bJr/ohvHXlviFhOyYrYb+qqdOnwLYo4
+<end of output>
+Test time =   0.61 sec
+----------------------------------------------------------
+Test Passed.
+"t_webget" end time: Sep 18 13:22 CST
+"t_webget" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/164 Testing: t_tcp_parser
+29/164 Test: t_tcp_parser
+Command: "/home/jhz/sponge/build/tests/tcp_parser" "/home/jhz/sponge/tests/ipv4_parser.data"
+Directory: /home/jhz/sponge/build
+"t_tcp_parser" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"t_tcp_parser" end time: Sep 18 13:22 CST
+"t_tcp_parser" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/164 Testing: t_ipv4_parser
+30/164 Test: t_ipv4_parser
+Command: "/home/jhz/sponge/build/tests/ipv4_parser" "/home/jhz/sponge/tests/ipv4_parser.data"
+Directory: /home/jhz/sponge/build
+"t_ipv4_parser" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"t_ipv4_parser" end time: Sep 18 13:22 CST
+"t_ipv4_parser" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/164 Testing: t_active_close
+31/164 Test: t_active_close
+Command: "/home/jhz/sponge/build/tests/fsm_active_close"
+Directory: /home/jhz/sponge/build
+"t_active_close" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"t_active_close" end time: Sep 18 13:22 CST
+"t_active_close" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/164 Testing: t_passive_close
+32/164 Test: t_passive_close
+Command: "/home/jhz/sponge/build/tests/fsm_passive_close"
+Directory: /home/jhz/sponge/build
+"t_passive_close" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"t_passive_close" end time: Sep 18 13:22 CST
+"t_passive_close" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/164 Testing: t_ack_rst
+34/164 Test: t_ack_rst
+Command: "/home/jhz/sponge/build/tests/fsm_ack_rst_relaxed"
+Directory: /home/jhz/sponge/build
+"t_ack_rst" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test 1
+Test Failure on expectation:
+	Expectation: data available
+
+Failure message:
+	The TCP should have data for the user, but does not
+
+List of steps that executed successfully:
+	Action:      connect
+	Expectation: exactly one segment sent with (A=0,R=0,S=1,F=0,seqno=2147483647,payload_size=0,)
+	Action:      packet arrives: Header(flags=SA,seqno=2147483647,ack=2147483648,win=137) with no payload
+	Expectation: exactly one segment sent with (A=1,R=0,S=0,F=0,ackno=2147483648,payload_size=0,)
+	Action:      packet arrives: Header(flags=A,seqno=2147483648,ack=2147483648,win=137) with no payload
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2147483648,ack=2147483647,win=137) with no payload
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2147483648,ack=2147483649,win=137) with no payload
+	Expectation: exactly one segment sent with (A=1,ackno=2147483648,)
+	Action:      packet arrives: Header(flags=A,seqno=2147483647,ack=2147483648,win=137) with 1 data bytes "<1>"
+	Expectation: TCP has 0 unassembled bytes
+	Expectation: exactly one segment sent with (A=1,ackno=2147483648,)
+	Action:      packet arrives: Header(flags=A,seqno=2147547648,ack=2147483648,win=137) with 1 data bytes "<1>"
+	Expectation: TCP has 0 unassembled bytes
+	Expectation: exactly one segment sent with (A=1,ackno=2147483648,)
+	Action:      packet arrives: Header(flags=A,seqno=2147483648,ack=2147483648,win=137) with 1 data bytes "<1>"
+
+Note:
+	test 1 failed: pkt not processed on next seqno
+
+Warning: Unclean shutdown of TCPConnection
+The TCP should have data for the user, but does not
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"t_ack_rst" end time: Sep 18 13:22 CST
+"t_ack_rst" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/164 Testing: t_ack_rst_win
+36/164 Test: t_ack_rst_win
+Command: "/home/jhz/sponge/build/tests/fsm_ack_rst_win_relaxed"
+Directory: /home/jhz/sponge/build
+"t_ack_rst_win" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test Failure on expectation:
+	Expectation: TCP has 1 unassembled bytes
+
+Failure message:
+	The TCP has `unassembled_bytes = 2`, but unassembled_bytes was expected to be `1`
+
+List of steps that executed successfully:
+	Action:      connect
+	Expectation: exactly one segment sent with (A=0,R=0,S=1,F=0,seqno=2147483647,payload_size=0,)
+	Action:      packet arrives: Header(flags=SA,seqno=2147483647,ack=2147483648,win=137) with no payload
+	Expectation: exactly one segment sent with (A=1,R=0,S=0,F=0,ackno=2147483648,payload_size=0,)
+	Action:      packet arrives: Header(flags=A,seqno=2147483648,ack=2147483648,win=137) with no payload
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2147483648,ack=2147483647,win=137) with no payload
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2147483648,ack=2147483649,win=137) with no payload
+	Expectation: exactly one segment sent with (ackno=2147483648,)
+	Action:      packet arrives: Header(flags=A,seqno=2147483647,ack=2147483648,win=137) with 1 data bytes "<1>"
+	Expectation: TCP has 0 unassembled bytes
+	Expectation: exactly one segment sent with (ackno=2147483648,)
+	Action:      packet arrives: Header(flags=A,seqno=2147547648,ack=2147483648,win=137) with 1 data bytes "<1>"
+	Expectation: TCP has 0 unassembled bytes
+	Expectation: exactly one segment sent with (ackno=2147483648,)
+	Action:      packet arrives: Header(flags=A,seqno=2147547647,ack=2147483648,win=137) with 1 data bytes "<1>"
+	Expectation: TCP has 1 unassembled bytes
+	Expectation: exactly one segment sent with (ackno=2147483648,)
+	Expectation: no (more) data available
+	Action:      packet arrives: Header(flags=A,seqno=2147483648,ack=2147483648,win=137) with 1 data bytes "<1>"
+
+Note:
+	seg not processed on next seqno
+
+Warning: Unclean shutdown of TCPConnection
+The TCP has `unassembled_bytes = 2`, but unassembled_bytes was expected to be `1`
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"t_ack_rst_win" end time: Sep 18 13:22 CST
+"t_ack_rst_win" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/164 Testing: t_connect
+38/164 Test: t_connect
+Command: "/home/jhz/sponge/build/tests/fsm_connect_relaxed"
+Directory: /home/jhz/sponge/build
+"t_connect" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"t_connect" end time: Sep 18 13:22 CST
+"t_connect" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/164 Testing: t_listen
+40/164 Test: t_listen
+Command: "/home/jhz/sponge/build/tests/fsm_listen_relaxed"
+Directory: /home/jhz/sponge/build
+"t_listen" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Warning: Unclean shutdown of TCPConnection
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"t_listen" end time: Sep 18 13:22 CST
+"t_listen" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/164 Testing: t_winsize
+41/164 Test: t_winsize
+Command: "/home/jhz/sponge/build/tests/fsm_winsize"
+Directory: /home/jhz/sponge/build
+"t_winsize" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+Warning: Unclean shutdown of TCPConnection
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"t_winsize" end time: Sep 18 13:22 CST
+"t_winsize" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/164 Testing: t_retx
+43/164 Test: t_retx
+Command: "/home/jhz/sponge/build/tests/fsm_retx_relaxed"
+Directory: /home/jhz/sponge/build
+"t_retx" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"t_retx" end time: Sep 18 13:22 CST
+"t_retx" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/164 Testing: t_retx_win
+44/164 Test: t_retx_win
+Command: "/home/jhz/sponge/build/tests/fsm_retx_win"
+Directory: /home/jhz/sponge/build
+"t_retx_win" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+Warning: Unclean shutdown of TCPConnection
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+Warning: Unclean shutdown of TCPConnection
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+Warning: Unclean shutdown of TCPConnection
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+Warning: Unclean shutdown of TCPConnection
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+Warning: Unclean shutdown of TCPConnection
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+Warning: Unclean shutdown of TCPConnection
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+Warning: Unclean shutdown of TCPConnection
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+Warning: Unclean shutdown of TCPConnection
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+Warning: Unclean shutdown of TCPConnection
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+  check_segment
+Warning: Unclean shutdown of TCPConnection
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"t_retx_win" end time: Sep 18 13:22 CST
+"t_retx_win" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/164 Testing: t_loopback
+45/164 Test: t_loopback
+Command: "/home/jhz/sponge/build/tests/fsm_loopback"
+Directory: /home/jhz/sponge/build
+"t_loopback" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test Failure on expectation:
+	Expectation: TCP has 0 bytes in flight
+
+Failure message:
+	The TCP has `bytes_in_flight = 7091`, but bytes_in_flight was expected to be `0`
+
+List of steps that executed successfully:
+	Action:      connect
+	Expectation: exactly one segment sent with (A=0,R=0,S=1,F=0,seqno=2869749163,payload_size=0,)
+	Action:      packet arrives: Header(flags=SA,seqno=2869749163,ack=2869749164,win=137) with no payload
+	Expectation: exactly one segment sent with (A=1,R=0,S=0,F=0,ackno=2869749164,payload_size=0,)
+	Action:      packet arrives: Header(flags=A,seqno=2869749164,ack=2869749164,win=65000) with no payload
+	Action:      write (7091 bytes) [23, 7a, e1, 7a, 53, e0, ef, 81, 12, 71, ef, 7c, 8c, 10, 26, 7d, ...]
+	Action:      1ms pass
+	Expectation: TCP has 7091 bytes in flight
+	Expectation: segment sent
+	Action:      packet arrives: Header(flags=A,seqno=2869749164,ack=2869749164,win=65000) with 1452 data bytes "#z<225>zS<224><239><129><18>q<239>|<140><16>&}..."
+	Action:      1ms pass
+	Action:      packet arrives: Header(flags=A,seqno=2869750616,ack=2869749164,win=65000) with 1452 data bytes "<27><197>ns<195><255><242><222>2<230>kh<13><185><147><15>..."
+	Action:      1ms pass
+	Action:      packet arrives: Header(flags=A,seqno=2869752068,ack=2869749164,win=65000) with 1452 data bytes "<198><168>r<218>KGC<5><212>3@u<154><187><138>W..."
+	Action:      1ms pass
+	Action:      packet arrives: Header(flags=A,seqno=2869753520,ack=2869749164,win=65000) with 1452 data bytes "<228><232><199><1>MO<156><20><205><198>B<20>R<179><160><178>..."
+	Action:      1ms pass
+	Action:      packet arrives: Header(flags=A,seqno=2869754972,ack=2869749164,win=65000) with 1283 data bytes "/[<19><141><18>&<179><9>5L<215><158><238><215>6<146>..."
+	Action:      1ms pass
+	Action:      packet arrives: Header(flags=A,seqno=2869756255,ack=2869749164,win=65000) with no payload
+	Action:      1ms pass
+	Action:      packet arrives: Header(flags=A,seqno=2869756255,ack=2869749164,win=65000) with no payload
+	Action:      1ms pass
+	Action:      packet arrives: Header(flags=A,seqno=2869756255,ack=2869749164,win=65000) with no payload
+	Action:      1ms pass
+	Action:      packet arrives: Header(flags=A,seqno=2869756255,ack=2869749164,win=65000) with no payload
+	Action:      1ms pass
+	Action:      packet arrives: Header(flags=A,seqno=2869756255,ack=2869749164,win=65000) with no payload
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+
+Warning: Unclean shutdown of TCPConnection
+The TCP has `bytes_in_flight = 7091`, but bytes_in_flight was expected to be `0`
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"t_loopback" end time: Sep 18 13:22 CST
+"t_loopback" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/164 Testing: t_loopback_win
+46/164 Test: t_loopback_win
+Command: "/home/jhz/sponge/build/tests/fsm_loopback_win"
+Directory: /home/jhz/sponge/build
+"t_loopback_win" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test Failure on expectation:
+	Expectation: no (more) segments sent
+
+Failure message:
+	The TCP produced a segment when it should not have
+
+List of steps that executed successfully:
+	Action:      connect
+	Expectation: exactly one segment sent with (A=0,R=0,S=1,F=0,seqno=2293735251,payload_size=0,)
+	Action:      packet arrives: Header(flags=SA,seqno=2293735251,ack=2293735252,win=137) with no payload
+	Expectation: exactly one segment sent with (A=1,R=0,S=0,F=0,ackno=2293735252,payload_size=0,)
+	Action:      packet arrives: Header(flags=A,seqno=2293735252,ack=2293735252,win=65000) with no payload
+	Action:      write (1494 bytes) [91, e7, 7d, 47, a9, 44, 47, 70, e6, 22, 64, fd, cc, c7, 56, 29, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      write (7842 bytes) [77, a0, 34, 15, ea, fc, d0, 13, 3e, 70, fa, ce, bb, e7, a6, 64, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      write (6695 bytes) [ab, 30, 65, 3, 76, 0, 69, 6c, 15, 91, 11, 24, 6b, d0, 43, b7, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      write (1228 bytes) [2e, 76, 95, 58, 43, c5, c6, f3, d5, 1f, a2, e0, ff, 84, d3, 8, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      write (5460 bytes) [dd, f3, 60, 71, c1, 56, bf, ef, 51, 22, 4f, a2, 3d, d7, da, c, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      write (7263 bytes) [84, 1f, e3, c8, 6d, c4, c6, a9, 21, 5e, 4d, 78, 65, 11, 9b, 25, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      write (3483 bytes) [21, e7, 4d, 1f, 8b, f7, 4d, ef, 80, ba, 58, 7b, db, f5, 83, 49, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      write (5594 bytes) [3a, 31, c3, 7a, ae, 7c, 61, 43, 41, df, bb, 3f, 42, 5c, 58, 1f, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      write (1485 bytes) [fd, fe, b, d3, 34, d8, fa, 79, 94, 38, e4, 46, 3e, fd, c3, ab, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      write (2261 bytes) [b2, 45, f6, cc, 88, 2, 7e, 83, b, 48, 23, ef, 8f, cc, 3, f4, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      write (5926 bytes) [fa, d0, cb, 15, 26, 3, a3, 45, 34, 9, aa, dc, 95, 62, 79, 9c, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      write (6932 bytes) [46, 9b, 96, 34, a5, 64, 3e, 82, 2b, 55, 94, b6, 6f, e4, 6b, 6a, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      write (1225 bytes) [da, 9, df, 70, c7, f4, b4, 32, 5f, 80, ea, 3f, 9, cf, 46, d4, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      write (4565 bytes) [48, d0, 52, 70, 46, 26, 69, 97, 89, 5e, db, ed, b, 4d, 54, c8, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      write (3547 bytes) [6a, 1b, 89, 6, 51, 8c, ab, 3a, 3c, 1d, c7, e7, 27, d5, d1, 3c, ...]
+	Action:      1ms pass
+	Expectation: segment sent
+	Action:      packet arrives: Header(flags=A,seqno=2293778057,ack=2293735252,win=65000) with 1452 data bytes "<250><208><203><21>&<3><163>E4<9><170><220><149>by<156>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293742554,ack=2293735252,win=65000) with 1452 data bytes "Ne<189>_<223><168>D<173>t<200><242><182><235>}<143><5>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293775763,ack=2293735252,win=65000) with 33 data bytes "<193><24><244><12>Db?<208><176><219><15>P7<25>7j..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293771621,ack=2293735252,win=65000) with 1452 data bytes "<212><210><204>q<149>[<212><4><210>}<0>E(<223><230>o..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293735252,ack=2293735252,win=65000) with 1452 data bytes "<145><231>}G<169>DGp<230>"d<253><204><199>V)..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293786887,ack=2293735252,win=65000) with 1452 data bytes "<245>N<151>_<27><198><177>-<143>\<250>Q<221><215>Uk..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293763779,ack=2293735252,win=65000) with 1452 data bytes "<238>HR'b<163>%<252>!<180>/S<255><196><182><213>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293789791,ack=2293735252,win=65000) with 1124 data bytes "<13>K<29><1><231><223><156><127><218><253>Q<171>$<159>.<132>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293780961,ack=2293735252,win=65000) with 1452 data bytes "U<170><230><222><142><242><220><199><240>u<147><30><162><147><4>+..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293796496,ack=2293735252,win=65000) with 209 data bytes "<20>v<255>=y<208><157>6<242><196><231><1><197><207>0<194>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293792140,ack=2293735252,win=65000) with 1452 data bytes "H<208>RpF&i<151><137>^<219><237><11>MT<200>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293756867,ack=2293735252,win=65000) with 1104 data bytes "<157><233><227>!<221><187><190><31><156>PQ=<145><127>7<10>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293777248,ack=2293735252,win=65000) with 809 data bytes "<176><30><170>Qf29S8<234><239>j<5><156><195>V..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293785435,ack=2293735252,win=65000) with 1452 data bytes "e<6>y<4>l<191><174><191><188><29><164>E<252><159><252><19>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293788339,ack=2293735252,win=65000) with 1452 data bytes "<175><232><252><158>T<195>BM<8>Yg<2>IF<227>Q..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293783865,ack=2293735252,win=65000) with 118 data bytes "<197><25><188><206><255><239><228><16>X[<226><179>X<241>J<189>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293759423,ack=2293735252,win=65000) with 1452 data bytes "<236>#<157>;<211><194>zeO<181>><251><22><138><250><245>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293796705,ack=2293735252,win=65000) with 1452 data bytes "j<27><137><6>Q<140><171>:<<29><199><231>'<213><209><..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293751283,ack=2293735252,win=65000) with 1228 data bytes ".v<149>XC<197><198><243><213><31><162><224><255><132><211><8>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293736704,ack=2293735252,win=65000) with 42 data bytes "<2><159><207>7<1>H(<17><206>)<250><132>s<15>T<244>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293744588,ack=2293735252,win=65000) with 1452 data bytes "<171>0e<3>v<0>il<21><145><17>$k<208>C<183>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293798157,ack=2293735252,win=65000) with 1452 data bytes "<175>^<134>|_<248>:<231>g<10>,z<207>|-<30>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293741102,ack=2293735252,win=65000) with 1452 data bytes "<6><183><254>D<249><150><182><146><9><163><204>R<228><8>ra..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293760875,ack=2293735252,win=65000) with 1452 data bytes "<170><162><249>h9<168>*@j<151>Si<198>2<251><226>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293738198,ack=2293735252,win=65000) with 1452 data bytes "<179><206>#<236>^<18><21>3<236><182>cSu<12><134><178>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293775796,ack=2293735252,win=65000) with 1452 data bytes "<178>E<246><204><136><2>~<131><11>H#<239><143><204><3><244>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293762327,ack=2293735252,win=65000) with 1452 data bytes "<130><236><12><205><195><128><234>b<26><136>x<242><245><166><172><148>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293790915,ack=2293735252,win=65000) with 1225 data bytes "<218><9><223>p<199><244><180>2_<128><234>?<9><207>F<212>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293757971,ack=2293735252,win=65000) with 1452 data bytes "<132><31><227><200>m<196><198><169>!^Mxe<17><155>%..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293779509,ack=2293735252,win=65000) with 1452 data bytes "wm<10><168><11>J|<156><214>ry<219><212><242><159><163>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293752511,ack=2293735252,win=65000) with 1452 data bytes "<221><243>`q<193>V<191><239>Q"O<162>=<215><218><12>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293765231,ack=2293735252,win=65000) with 3 data bytes "<192><245><218>"
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293770169,ack=2293735252,win=65000) with 1452 data bytes "<137><217><187><255><158><224><194><145>up<166>`<138><215><27><162>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293799609,ack=2293735252,win=65000) with 643 data bytes "E;b<188><141><243><201>^<20><248>(<247><231><239><178><189>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293773073,ack=2293735252,win=65000) with 1238 data bytes "49L<204><186><180>f<193>D<131><230>kS<226>bI..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293783983,ack=2293735252,win=65000) with 1452 data bytes "F<155><150>4<165>d><130>+U<148><182>o<228>kj..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293782413,ack=2293735252,win=65000) with 1452 data bytes "9g<146><142>`@<<174><4>i<184><209>9 <236>R..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293774311,ack=2293735252,win=65000) with 1452 data bytes "<253><254><11><211>4<216><250>y<148>8<228>F><253><195><171>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293746040,ack=2293735252,win=65000) with 1452 data bytes "<229><204><156>o<224>'x<192><134><236>/j<211><208>]F..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293744006,ack=2293735252,win=65000) with 582 data bytes "<5><217>h<164><220><249><143><211><253>S<187><205>c<254><181><225>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293739650,ack=2293735252,win=65000) with 1452 data bytes "K(<172><129><169>@5<172><29>R<23><143>}<217>j<130>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293795044,ack=2293735252,win=65000) with 1452 data bytes "G<180>@<228><205><165><244><251>F<189>dk<189>$P<207>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293765234,ack=2293735252,win=65000) with 1452 data bytes "!<231>M<31><139><247>M<239><128><186>X{<219><245><131>I..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293750396,ack=2293735252,win=65000) with 887 data bytes "h/<148>'<207>v<160><24><160><154>e<205>{<140><150><23>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293748944,ack=2293735252,win=65000) with 1452 data bytes "<210><30><153><198><239><137>><167>)<15>Z}<140>A<231><204>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293766686,ack=2293735252,win=65000) with 1452 data bytes "<6>{<13>]J<209><144><212><137>:<151>)<190><194>v]..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293753963,ack=2293735252,win=65000) with 1452 data bytes "3<243><144><201><26><230>Q<6>E%PPrC<230><183>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293793592,ack=2293735252,win=65000) with 1452 data bytes "<27>I<166>+|<148><139>'9<177><28>i5<157><178><165>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293755415,ack=2293735252,win=65000) with 1452 data bytes "<10><148><248>cy<201>;&<222><127><21><232>j<138><202><185>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293747492,ack=2293735252,win=65000) with 1452 data bytes "<137>n~<186><128>X(+J<150><18>b<150><191><153><245>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293736746,ack=2293735252,win=65000) with 1452 data bytes "w<160>4<21><234><252><208><19>>p<250><206><187><231><166>d..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293768717,ack=2293735252,win=65000) with 1452 data bytes ":1<195>z<174>|aCA<223><187>?B\X<31>..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293768138,ack=2293735252,win=65000) with 579 data bytes "<176>B<178><219>O<214><155><227>_<250><4>hn<138><138>p..."
+	Action:      1ms pass
+	Expectation: no (more) segments sent
+	Action:      packet arrives: Header(flags=A,seqno=2293800252,ack=2293735252,win=65000) with no payload
+
+Note:
+	test 2 failed: ACK for ACK?
+
+Warning: Unclean shutdown of TCPConnection
+The TCP produced a segment when it should not have
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"t_loopback_win" end time: Sep 18 13:22 CST
+"t_loopback_win" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/164 Testing: t_reorder
+47/164 Test: t_reorder
+Command: "/home/jhz/sponge/build/tests/fsm_reorder"
+Directory: /home/jhz/sponge/build
+"t_reorder" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+Test Failure on expectation:
+	Expectation: data available (65000 bytes starting with "<161><10>C<135>K;<134><186>&<248>Q<187> <127>[<198>...")
+
+Failure message:
+	The TCP should have data for the user, but does not
+
+List of steps that executed successfully:
+	Action:      connect
+	Expectation: exactly one segment sent with (A=0,R=0,S=1,F=0,seqno=1828794607,payload_size=0,)
+	Action:      packet arrives: Header(flags=SA,seqno=935932985,ack=1828794608,win=137) with no payload
+	Expectation: exactly one segment sent with (A=1,R=0,S=0,F=0,ackno=935932986,payload_size=0,)
+	Action:      packet arrives: Header(flags=A,seqno=935956578,ack=1828794608,win=137) with 25 data bytes "7<210><19><27>r3<242>;<5><217><231>F<190>\<218>$..."
+	Action:      packet arrives: Header(flags=A,seqno=935943006,ack=1828794608,win=137) with 157 data bytes "<238><141><6>y<239>\<161><210>|#<232><246>V<198><157><216>..."
+	Action:      packet arrives: Header(flags=A,seqno=935967133,ack=1828794608,win=137) with 20 data bytes "<17><249><148><182>R<225><17>T<224><127>*<165><163>#<7><14>..."
+	Action:      packet arrives: Header(flags=A,seqno=935950911,ack=1828794608,win=137) with 1353 data bytes "V<233><253><162><175>A<147><198><3>j<184><12>{(<23>-..."
+	Action:      packet arrives: Header(flags=A,seqno=935957585,ack=1828794608,win=137) with 575 data bytes "<138><222><7><149><11>)<171><138><183><134>:9<170><178><150><181>..."
+	Action:      packet arrives: Header(flags=A,seqno=935941906,ack=1828794608,win=137) with 1074 data bytes "b<175>q<165>S<220><189><30>v<0>9<214><178><129><4><196>..."
+	Action:      packet arrives: Header(flags=A,seqno=935967809,ack=1828794608,win=137) with 1428 data bytes " ]<151>L<138><196><181><248><210>9h<178><137><139>V<135>..."
+	Action:      packet arrives: Header(flags=A,seqno=935972974,ack=1828794608,win=137) with 653 data bytes "<182><30>O<195><150>l<223><151>q`<139>|<160><150><250>[..."
+	Action:      packet arrives: Header(flags=A,seqno=935971879,ack=1828794608,win=137) with 1095 data bytes "Y?~<222><21><176><11><11>A<19>x$<208>m<240><220>..."
+	Action:      packet arrives: Header(flags=A,seqno=935992621,ack=1828794608,win=137) with 216 data bytes "2<226><173><18><133>[|<207><194><249>[8<211>@<153><246>..."
+	Action:      packet arrives: Header(flags=A,seqno=935970364,ack=1828794608,win=137) with 582 data bytes "<134>{<226>L<26>k<242><239>m<252>B<146>(1><136>..."
+	Action:      packet arrives: Header(flags=A,seqno=935938269,ack=1828794608,win=137) with 670 data bytes "m u<1>m<140>#/4<145>*<192><217><19>H<209>..."
+	Action:      packet arrives: Header(flags=A,seqno=935958847,ack=1828794608,win=137) with 1232 data bytes "<171>*<204><21><22><29>$<155><177>0<150>S<130><158><141>|..."
+	Action:      packet arrives: Header(flags=A,seqno=935949481,ack=1828794608,win=137) with 346 data bytes "~D<189><24>#<217><147><240>)<140><209>/<225><142><207><0>..."
+	Action:      packet arrives: Header(flags=A,seqno=935950650,ack=1828794608,win=137) with 261 data bytes "<144><131><235>n<132><246><127><148><3>=C<181>~bng..."
+	Action:      packet arrives: Header(flags=A,seqno=935956776,ack=1828794608,win=137) with 809 data bytes "<228>Z<190>Z<7><232><30><175><227><253> Nw<235><159><21>..."
+	Action:      packet arrives: Header(flags=A,seqno=935988730,ack=1828794608,win=137) with 274 data bytes "<23>n<163><182>,+<231><186><206><28><230><215>~<22><168>_..."
+	Action:      packet arrives: Header(flags=A,seqno=935987780,ack=1828794608,win=137) with 950 data bytes "<22>R<231>^y<250><6><200><197><135><213>V<10><151>*<203>..."
+	Action:      packet arrives: Header(flags=A,seqno=935963136,ack=1828794608,win=137) with 1365 data bytes "<242>x<254>`|<136>G}><147><254><147><157>SW<240>..."
+	Action:      packet arrives: Header(flags=A,seqno=935948886,ack=1828794608,win=137) with 595 data bytes "<207>no<3><16>&n<135><194><177><<157><8><136><254>!..."
+	Action:      packet arrives: Header(flags=A,seqno=935935385,ack=1828794608,win=137) with 1409 data bytes "<214>!<26>x<170>76*<211><24><23><16>i|<15><253>..."
+	Action:      packet arrives: Header(flags=A,seqno=935975911,ack=1828794608,win=137) with 1318 data bytes "Q<231><139><160><162><209> 9Q<232>Z<151><16><132>_<246>..."
+	Action:      packet arrives: Header(flags=A,seqno=935941095,ack=1828794608,win=137) with 142 data bytes "<132><253><239>j?<3>Q<183><194>;4<17>|T<138>M..."
+	Action:      packet arrives: Header(flags=A,seqno=935979631,ack=1828794608,win=137) with 1298 data bytes "<231><212>}<240>;<26>n,<146><18><186><225><170><20>><169>..."
+	Action:      packet arrives: Header(flags=A,seqno=935969237,ack=1828794608,win=137) with 1127 data bytes "<177><11>0<201><28><223><207><211><179>m<146><252>A<4>CA..."
+	Action:      packet arrives: Header(flags=A,seqno=935993414,ack=1828794608,win=137) with 1159 data bytes "s<23>ex"t<220>*<204>jVh}<225><175><155>..."
+	Action:      packet arrives: Header(flags=A,seqno=935982074,ack=1828794608,win=137) with 978 data bytes "<224><210>5<134><219><199><180><133>\<142>W:<239><239>e<145>..."
+	Action:      packet arrives: Header(flags=A,seqno=935944387,ack=1828794608,win=137) with 178 data bytes "<193><234>)(Z<155>ft<138><21><7><11>Z<186><160>{..."
+	Action:      packet arrives: Header(flags=A,seqno=935977957,ack=1828794608,win=137) with 1227 data bytes "<188><12>]<160><202>S@<22>/.r<25>rA<135><187>..."
+	Action:      packet arrives: Header(flags=A,seqno=935954908,ack=1828794608,win=137) with 493 data bytes "<12><238><0>0<138><185>%<176>5y<234><206><127>)<160><196>..."
+	Action:      packet arrives: Header(flags=A,seqno=935934330,ack=1828794608,win=137) with 1055 data bytes "<194><207>U!<156>H<200><241><247><11><148><210><155>Y:<174>..."
+	Action:      packet arrives: Header(flags=A,seqno=935984192,ack=1828794608,win=137) with 1200 data bytes "<164>b{z<232>`x<215><200><157><219>C<159>(X}..."
+	Action:      packet arrives: Header(flags=A,seqno=935960310,ack=1828794608,win=137) with 1126 data bytes "b<168>{<28><31><250><150><234><210><159><147><200>5<237>X<202>..."
+	Action:      packet arrives: Header(flags=A,seqno=935944565,ack=1828794608,win=137) with 775 data bytes "J<246>_<127>F<224><220><10>E><31>"<8>b<228>I..."
+	Action:      packet arrives: Header(flags=A,seqno=935938939,ack=1828794608,win=137) with 233 data bytes "<236>Gy<181>-/<212><193>"L<138><249>qseL..."
+	Action:      packet arrives: Header(flags=A,seqno=935953690,ack=1828794608,win=137) with 692 data bytes "<142><27><219><13>Z.]o<134><164><128><238><142><222>"?..."
+	Action:      packet arrives: Header(flags=A,seqno=935952264,ack=1828794608,win=137) with 446 data bytes "<163>c<242>W&<4><178><185><197>SR4<131>L6<208>..."
+	Action:      packet arrives: Header(flags=A,seqno=935956603,ack=1828794608,win=137) with 173 data bytes "<172>m%<156>}L<201><171><237><251><28>J_g~<175>..."
+	Action:      packet arrives: Header(flags=A,seqno=935989004,ack=1828794608,win=137) with 1286 data bytes "<138>j<197><21><184><157><7><207>|<170><178>(<226>i<31><201>..."
+	Action:      packet arrives: Header(flags=A,seqno=935987002,ack=1828794608,win=137) with 778 data bytes "<145><16><201><225>0R<178><135><6><23>*<136><191>"<22><3>..."
+	Action:      packet arrives: Header(flags=A,seqno=935955401,ack=1828794608,win=137) with 1177 data bytes "<4><250><209><163><147>,0<134>KU<224><154><174><178><148><6>..."
+	Action:      packet arrives: Header(flags=A,seqno=935952755,ack=1828794608,win=137) with 455 data bytes "^<195><24><140><19>`Ah<136>Q<227>i<227><132>}o..."
+	Action:      packet arrives: Header(flags=A,seqno=935960079,ack=1828794608,win=137) with 231 data bytes "<15><158><251><24><230><245><232><141><189><30><204><246><156><214>',..."
+	Action:      packet arrives: Header(flags=A,seqno=935958732,ack=1828794608,win=137) with 115 data bytes "<146><4><168><21>D<14><157>v<194><11>}<130>b<175><145><136>..."
+	Action:      packet arrives: Header(flags=A,seqno=935990914,ack=1828794608,win=137) with 4 data bytes "^<231>z<140>"
+	Action:      packet arrives: Header(flags=A,seqno=935937548,ack=1828794608,win=137) with 721 data bytes "=<156>BU<220><157><174><6><9>G<193><242><143><194><229><15>..."
+	Action:      packet arrives: Header(flags=A,seqno=935996384,ack=1828794608,win=137) with 879 data bytes "<179>d<131>]=Y<163><16><248>n<145><196>1<185>f<235>..."
+	Action:      packet arrives: Header(flags=A,seqno=935947889,ack=1828794608,win=137) with 997 data bytes "<223><204><224><2><27>cd<246>t<210>q<212><211>B<215><190>..."
+	Action:      packet arrives: Header(flags=A,seqno=935941237,ack=1828794608,win=137) with 669 data bytes "v<249><23>8<4><131><231><149><204><148>oM/<131><12>R..."
+	Action:      packet arrives: Header(flags=A,seqno=935946172,ack=1828794608,win=137) with 802 data bytes "C<190><137><175><25>5<158><178><8>8}<10>%<197>~0..."
+	Action:      packet arrives: Header(flags=A,seqno=935995548,ack=1828794608,win=137) with 643 data bytes "<211><171>_<248><176><154><159>'<7>Kyp<7>I8<232>..."
+	Action:      packet arrives: Header(flags=A,seqno=935939737,ack=1828794608,win=137) with 1032 data bytes "<130><199>_T<243><7><177><7>D<30><18>6W<10>^<251>..."
+	Action:      packet arrives: Header(flags=A,seqno=935952710,ack=1828794608,win=137) with 45 data bytes "<174>j<26><23><231><21><196>El<139>j<177>%D<183><197>..."
+	Action:      packet arrives: Header(flags=A,seqno=935961436,ack=1828794608,win=137) with 809 data bytes "<204><19>q<218>B.<169>\<158>O<179><231>zuS<227>..."
+	Action:      packet arrives: Header(flags=A,seqno=935945340,ack=1828794608,win=137) with 816 data bytes "<28><202><171><30>e|<19>A%F-<135><167>{<234>5..."
+	Action:      packet arrives: Header(flags=A,seqno=935975316,ack=1828794608,win=137) with 595 data bytes "[<137><240><190><179><186><129>M <231><150>s<201>O<173><170>..."
+	Action:      packet arrives: Header(flags=A,seqno=935977229,ack=1828794608,win=137) with 650 data bytes "<205><228><209>_<242>i<240>h%9<157><177><176><254>a<11>..."
+	Action:      packet arrives: Header(flags=A,seqno=935983052,ack=1828794608,win=137) with 305 data bytes "<139>!<215><242><21><210><12><203>^<226>><195><228><202> N..."
+	Action:      packet arrives: Header(flags=A,seqno=935983357,ack=1828794608,win=137) with 835 data bytes "<146><181><155>SY$,H<129>g<164><251>0<250>eC..."
+	Action:      packet arrives: Header(flags=A,seqno=935980929,ack=1828794608,win=137) with 289 data bytes "^<190><21>k<130>{$R*Kv<134>\kW<190>..."
+	Action:      packet arrives: Header(flags=A,seqno=935997263,ack=1828794608,win=137) with 723 data bytes "<0><228><26><3>}<199><245><193><228><138><179>d<196><155>6<172>..."
+	Action:      packet arrives: Header(flags=A,seqno=935970946,ack=1828794608,win=137) with 933 data bytes "<8>|m<197><13><182><10><233>qD7<224><191><247>;<226>..."
+	Action:      packet arrives: Header(flags=A,seqno=935936794,ack=1828794608,win=137) with 741 data bytes "B<240>L<232><231>{<172><249><149><130><248><12>9]<175><240>..."
+	Action:      packet arrives: Header(flags=A,seqno=935985601,ack=1828794608,win=137) with 1401 data bytes "<245><131>Y1N<192><160>Z<190>6<180><232><178><210>R!..."
+	Action:      packet arrives: Header(flags=A,seqno=935962245,ack=1828794608,win=137) with 891 data bytes "<242>:<213><217>?<171><210>-<192><0><23>:;<179><196><235>..."
+	Action:      packet arrives: Header(flags=A,seqno=935953210,ack=1828794608,win=137) with 480 data bytes "<223><167><240><236><170><142>$<153><142><239><9><164>,<202>8e..."
+	Action:      packet arrives: Header(flags=A,seqno=935996191,ack=1828794608,win=137) with 193 data bytes "<24>G<18>(<212>Q<155>[P<198>k1<15><229><182>A..."
+	Action:      packet arrives: Header(flags=A,seqno=935992837,ack=1828794608,win=137) with 577 data bytes "<225><150><143>DJ<151>,<240>G<215>6<161><17><250><246>S..."
+	Action:      packet arrives: Header(flags=A,seqno=935946974,ack=1828794608,win=137) with 915 data bytes "<176>s<206><188>:<0><146><26><28><189><22><14>y<136><167><235>..."
+	Action:      packet arrives: Header(flags=A,seqno=935981708,ack=1828794608,win=137) with 300 data bytes "X<210>He<9><215><213><196>yX<218>o<138><188>%<171>..."
+	Action:      packet arrives: Header(flags=A,seqno=935977879,ack=1828794608,win=137) with 78 data bytes "<187>S<24><156><1><178><249><165><179><176><145><221>U<230><162><153>..."
+	Action:      packet arrives: Header(flags=A,seqno=935990918,ack=1828794608,win=137) with 301 data bytes "<248><231><3><13>H%qdQ<176><206>><170>5<219>o..."
+	Action:      packet arrives: Header(flags=A,seqno=935990290,ack=1828794608,win=137) with 624 data bytes "<6><26><141><173>9<7>a<169>~<25>J<144><172><10>6|..."
+	Action:      packet arrives: Header(flags=A,seqno=935958160,ack=1828794608,win=137) with 572 data bytes "<154><21>%<182><141>)}<21>Y<7>6/<14>w<164>^..."
+	Action:      packet arrives: Header(flags=A,seqno=935965942,ack=1828794608,win=137) with 1191 data bytes "<31>Mz<182>|<128><202><224>,<198>j<197>e<221><145>e..."
+	Action:      packet arrives: Header(flags=A,seqno=935995161,ack=1828794608,win=137) with 387 data bytes "Tq<186><130>,<246>Y<150><129>m<183><205>y<229><223><137>..."
+	Action:      packet arrives: Header(flags=A,seqno=935994573,ack=1828794608,win=137) with 588 data bytes "<231>\-<204><167><2><237>,<18><185><138><229><26><5><240>q..."
+	Action:      packet arrives: Header(flags=A,seqno=935981218,ack=1828794608,win=137) with 490 data bytes "<230><180>,9<2>H<251><233><181>s<168>8<184><196><161><228>..."
+	Action:      packet arrives: Header(flags=A,seqno=935940769,ack=1828794608,win=137) with 326 data bytes "<248>#<163>$<244><8><234><142><<128>Hn7R<193><161>..."
+	Action:      packet arrives: Header(flags=A,seqno=935946156,ack=1828794608,win=137) with 16 data bytes "<210> O<213>f<144>;n<192><232><227><217>P<161><186><249>"
+	Action:      packet arrives: Header(flags=A,seqno=935974540,ack=1828794608,win=137) with 776 data bytes "_D<136>QU<237><145><245><17><194>P<144>nz//..."
+	Action:      packet arrives: Header(flags=A,seqno=935985392,ack=1828794608,win=137) with 209 data bytes "<2><138><20><234><244><181><246>xJ'\?u<239><150><28>..."
+	Action:      packet arrives: Header(flags=A,seqno=935943163,ack=1828794608,win=137) with 1224 data bytes "e<161><240>T<200><131><20>B<11><197>^9X<5><1><24>..."
+	Action:      packet arrives: Header(flags=A,seqno=935949827,ack=1828794608,win=137) with 823 data bytes ";<253><158><198>6_<150><197>#<159>F'<197>p<243><174>..."
+	Action:      packet arrives: Header(flags=A,seqno=935937535,ack=1828794608,win=137) with 13 data bytes "o<250><205>QW<171><241><15>Al<2>U<170>"
+	Action:      packet arrives: Header(flags=A,seqno=935973627,ack=1828794608,win=137) with 913 data bytes "<254><207>2<221><244>5=<200><241>2<167>*<207><176><185>f..."
+	Action:      packet arrives: Header(flags=A,seqno=935932986,ack=1828794608,win=137) with 1344 data bytes "<161><10>C<135>K;<134><186>&<248>Q<187> <127>[<198>..."
+	Action:      packet arrives: Header(flags=A,seqno=935979184,ack=1828794608,win=137) with 447 data bytes ":$<160><189><254>U;<181><8>8<128><1><140><227><133>d..."
+	Action:      packet arrives: Header(flags=A,seqno=935982008,ack=1828794608,win=137) with 66 data bytes ";<19><162>a<240><0>Z<164>RZ<223><239>#<1><218><145>..."
+	Action:      packet arrives: Header(flags=A,seqno=935954382,ack=1828794608,win=137) with 526 data bytes "r<149>C<246>oB<179>""<177><237><139>xLl<30>..."
+	Action:      packet arrives: Header(flags=A,seqno=935967153,ack=1828794608,win=137) with 656 data bytes "n<4><2>)<182><213>;<142><251><223><17><dS<19>)..."
+	Action:      packet arrives: Header(flags=A,seqno=935964501,ack=1828794608,win=137) with 1441 data bytes "=<195>=<238>Gy<198><190>~<21><203>2<147><147><16>3..."
+	Action:      packet arrives: Header(flags=A,seqno=935939172,ack=1828794608,win=137) with 565 data bytes "<3>V<193>AV<242>B,<151>O<28>*<228>Q<242><249>..."
+	Action:      packet arrives: Header(flags=A,seqno=935942980,ack=1828794608,win=137) with 26 data bytes "<232><232><163><141><128><222>Y<253><225><210><12><192>Z<181><236><..."
+	Action:      packet arrives: Header(flags=A,seqno=935991219,ack=1828794608,win=137) with 1402 data bytes "<233><220><214>$<27><174>W<129><163><161>=<6>vou}..."
+	Action:      1ms pass
+
+Note:
+	test 1 failed: got back the wrong data
+
+Warning: Unclean shutdown of TCPConnection
+The TCP should have data for the user, but does not
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"t_reorder" end time: Sep 18 13:22 CST
+"t_reorder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/164 Testing: t_address_dt
+48/164 Test: t_address_dt
+Command: "/home/jhz/sponge/build/doctests/address_dt"
+Directory: /home/jhz/sponge/build
+"t_address_dt" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"t_address_dt" end time: Sep 18 13:22 CST
+"t_address_dt" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/164 Testing: t_parser_dt
+49/164 Test: t_parser_dt
+Command: "/home/jhz/sponge/build/doctests/parser_dt"
+Directory: /home/jhz/sponge/build
+"t_parser_dt" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"t_parser_dt" end time: Sep 18 13:22 CST
+"t_parser_dt" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/164 Testing: t_socket_dt
+50/164 Test: t_socket_dt
+Command: "/home/jhz/sponge/build/doctests/socket_dt"
+Directory: /home/jhz/sponge/build
+"t_socket_dt" start time: Sep 18 13:22 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"t_socket_dt" end time: Sep 18 13:22 CST
+"t_socket_dt" time elapsed: 00:00:00
+----------------------------------------------------------
+
